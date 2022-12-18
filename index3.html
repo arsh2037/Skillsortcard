@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Skills card sortable</title>
+  <link rel="stylesheet" href="styles2.css">
+  <link rel="stylesheet" href="common-styles.css">
+  <script src="./itemList.js"></script>
+
+  <style>
+  #sortable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
+  #sortable li { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1.4em; height: 18px; }
+  #sortable li span { position: absolute; margin-left: -1.3em; }
+  </style>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script>
+  $( function() {
+    $(".sortable").sortable({
+            connectWith: '.sortable',
+            items: "li:not(.item.new)",
+            placeholder: 'place-holder',
+            scroll: false,
+            tolerance: "pointer"
+}).disableSelection();
+  } );
+  </script>
+</head>
+<body>
+ 
+    <div class="container">
+        <div class="first-page">
+            <div id="card-sort-content" class="no-results">
+            
+                <h1>The Career Values Card Sort</h1>
+                <hr class="thin" />
+                <div class="row buffer-bottom">
+                    <div id="imageText" class="col-xs-7">
+                        <p>
+                            <strong>Skills are what we learn to do</strong> . To function in this world, it is essential to learn skills.
+                            And we may become very good at them. But we feel fulfilled when we spend most of our time on the skills we enjoy using.
+                        </p>
+                        <ul>
+                            <li>Assess your current work situation</li>
+                            <li>Plan for the future</li>
+                            <li>Find the right job opportunities</li>
+                            <li>Decide what direction to take your career in</li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-5">
+                        <img class="img-responsive" src="completed.png" alt="" align="right" style="padding-left: 10px;" />
+                    </div>
+                </div>
+                <p>
+                    We are happier at work when we are spending most of our time using skills that we love and are good at so the skills at the top left corner of the grid.
+                </p>
+                <p>
+                    The Card Sort has been developed by <a href="customLink " target="_blank">
+                    <strong>Arsh Hasan</strong></a> and <a href="linkedInLink" target="_blank">
+                    <strong>and partner</strong></a>, two of Australia's most experienced 
+                    developers.
+                </p>
+        
+                <div id="instructions">
+                    <div id="instructionsHeading">
+                        <h2>Instructions</h2>
+                    </div>
+        
+                    <div id="instructionsContent">
+                         
+                        <p>This exercise is done in <strong>2 steps.</strong></p>
+                        <p class="font-large"><strong>Step 1 – Drag and Drop</strong></p>
+                        <p>
+                            <strong>Fairly quickly and spontaneously</strong> , go through each of the skills and <strong> drag and drop</strong> for anyone to use and apply to their own 
+                            them under <strong>the appropriate column headings</strong>  according to how much you enjoy using that skill. 
+                        </p>
+                        <p>
+                            Don't overthink, go with your instincts. There are no right or wrong answers, <strong> just what's right for you.  </strong>
+                        </p>
+                        <p>
+                            We understand that it can sometimes be difficult to decide exactly where to 
+                            place each card and suggest you place it in the <strong>'best fit'</strong> 
+                            column. You can change their order and column <strong>as many times</strong> 
+                            as you like.
+                        </p>
+                        <p class="font-large"><strong>Step 2 – Sort Each Value</strong></p>
+                        <p>
+                            Now sort each column into the rows according to how competent you feel you are at each skill. 
+                            You're not comparing yourself to an expert. Think of it with regards to ‘am I better than most people from the general public at this?’ If the answer is ‘yes’ then drag and drop that skill into the row  'Better than most people’.  
+                            Don’t be modest! If you’re unsure, give yourself the benefit of the doubt.
+                        </p>
+                        <p class="font-large"><strong>Step 3 – Click next to view and print results</strong></p>
+                        <p>
+                            Once you click next you will see your results displayed. Click on the BACK button 
+                            if they don't seem right and you want to change them around. You will also see a 
+                            series of questions designed to help you <strong>make further sense</strong> of 
+                            your career values.
+                        </p>
+                    </div>
+                </div>
+                
+                <br /><br />
+
+                <div id="cardSort" class="sort-item-container">
+                    <div class="sort-item-wrapper flex">
+                        <div class="items-container">
+                            <ul id="masterList" class="sortable">
+                            </ul>
+                        </div>
+                        <div class="card-sort-container sortable-container">
+                            <div class="card-sort-wrapper container-fluid">
+                                <div class="row row-cols-5 header">
+                                    <div class="column-item"></div>
+                                    <div class="column-item">LOVE USING</div>
+                                    <div class="column-item">LIKE USING</div>
+                                    <div class="column-item">PREFER NOT TO USE</div>
+                                    <div class="column-item">REALLY DISLIKE USING</div>
+                                </div>
+                                <br>
+                                <div class="row row-cols-5">
+                                    <div class="column-item side-item"><span>BETTER THAN MOST PEOPLE</span></div>
+                                    <div class="menu-item"><ul class="sortable r-1-c-1"></ul></div>
+                                    <div class="menu-item"><ul class="sortable r-1-c-2"></ul></div>
+                                    <div class="menu-item"><ul class="sortable r-1-c-3"></ul></div>
+                                    <div class="menu-item"><ul class="sortable r-1-c-4"></ul></div>
+                                </div>
+                                <div class="row row-cols-5">
+                                    <div class="column-item side-item"><span>AS WELL AS MOST PEOPLE</span></div>
+                                    <div class="menu-item"><ul class="sortable r-2-c-1"></ul></div>
+                                    <div class="menu-item"><ul class="sortable r-2-c-2"></ul></div>
+                                    <div class="menu-item"><ul class="sortable r-2-c-3"></ul></div>
+                                    <div class="menu-item"><ul class="sortable r-2-c-4"></ul></div>                      
+                                </div>
+                                <div class="row row-cols-5">
+                                    <div class="column-item side-item"><span>NOT AS WELL AS MOST PEOPLE</span></div>
+                                    <div class="menu-item"><ul class="sortable r-3-c-1"></ul></div>
+                                    <div class="menu-item"><ul class="sortable r-3-c-2"></ul></div>
+                                    <div class="menu-item"><ul class="sortable r-3-c-3"></ul></div>
+                                    <div class="menu-item"><ul class="sortable r-3-c-4"></ul></div>                      
+                                </div>
+                            </div>
+                            <br>
+                            <div id="submit" class="row text-center buffer-bottom">
+                                <div class="col-xs-12">
+                                    <button onclick="nextPage()">Next</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="second-page">
+            <div id="results">
+                <h1>Your Career Values Summary</h1>
+                <hr class="thin" />
+                
+                <div class="card-sort-container results-container">
+                    <div class="card-sort-wrapper container-fluid">
+                        <div class="row row-cols-5 header">
+                            <div class="column-item"></div>
+                            <div class="column-item">LOVE USING</div>
+                            <div class="column-item">LIKE USING</div>
+                            <div class="column-item">PREFER NOT TO USE</div>
+                            <div class="column-item">REALLY DISLIKE USING</div>
+                        </div>
+                        <br>
+                        <div class="row row-cols-5">
+                            <div class="column-item side-item">BETTER THAN MOST PEOPLE</div>
+                            <div class="menu-item"><ul class="r-1-c-1"></ul></div>
+                            <div class="menu-item"><ul class="r-1-c-2"></ul></div>
+                            <div class="menu-item"><ul class="r-1-c-3"></ul></div>
+                            <div class="menu-item"><ul class="r-1-c-4"></ul></div>
+                            
+                        </div>
+                        <div class="row row-cols-5">
+                            <div class="column-item side-item">AS WELL AS MOST PEOPLE</div>
+                            <div class="menu-item"><ul class="r-2-c-1"></ul></div>
+                            <div class="menu-item"><ul class="r-2-c-2"></ul></div>
+                            <div class="menu-item"><ul class="r-2-c-3"></ul></div>
+                            <div class="menu-item"><ul class="r-2-c-4"></ul></div>                      
+                        </div>
+                        <div class="row row-cols-5">
+                            <div class="column-item side-item">NOT AS WELL AS MOST PEOPLE</div>
+                            <div class="menu-item"><ul class="r-3-c-1"></ul></div>
+                            <div class="menu-item"><ul class="r-3-c-2"></ul></div>
+                            <div class="menu-item"><ul class="r-3-c-3"></ul></div>
+                            <div class="menu-item"><ul class="r-3-c-4"></ul></div>                      
+                        </div>
+                    </div>
+                    <br>
+                    <div id="submit" class="row text-center buffer-bottom">
+                        <div style="align-items: center;justify-content: center;" class="flex gap-8 col-xs-12">
+                            <button onclick="prevPage()">Back</button>
+                            <button onclick="goToMainPage()">Back To Main Page</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="makingSense">
+                <h2>Making sense of your results</h2>
+                <div class="row buffer-bottom">
+                    <div id="imageText" class="col-xs-7">
+                        <p><strong>What does your summary tell you?</strong></p>
+                        <p>The following questions are designed to help you think about:</p>
+                        <ul>
+                            <li><strong>What</strong> your most important career values are </li>
+                            <li><strong>Why</strong> they are so important to you; and </li>
+                            <li><strong>How</strong> to use them to improve your career. </li>
+                        </ul>
+                        <p>
+                            You might do this part of the activity with a friend and take turns to 
+                            discuss answers, or bring your responses to a career discussion with 
+                            your manager or coach.
+                        </p>
+                    </div>
+                    <div class="col-xs-5">
+                        <img class="img-responsive" src="making-sense.jpg" alt="" align="right" style="padding-left: 10px;" />
+                    </div>
+                </div>
+                <ol>
+                    <li>
+                        Each person can assign different meanings to their values: <br />
+                        <span class="question">What do your top 3-5 career values actually mean to you? Why?</span>
+                    </li>
+                    <li>
+                        Looking at the important and very important columns, often people can 
+                        detect patterns in their values, such as a preference for innovation and 
+                        creativity or doing work that is structured and predictable: <br />
+                        <span class="question">Are there any patterns you can detect in your results?</span>
+                    </li>
+                    <li>
+                        When your job is consistent with your career values, you usually enjoy 
+                        greater job satisfaction: <br />
+                        <span class="question">In what ways and to what extent are your most important values reflected 
+                        in your current work? Could this be improved? If so, how?</span>
+                    </li>
+                    <li>
+                        Career and life values often change over time: <br />
+                        <span class="question">Do you think your career values have changed over the past five to ten 
+                        years? If so, in what ways? Can you predict how they may change in the 
+                        future?</span>
+                    </li>
+                    <li>
+                        Thinking about what matters most to you provides the foundation for 
+                        successful career planning and change: <br />
+                        <span class="question">How can you use your most important values to guide your next career 
+                        change?</span>
+                    </li>
+                </ol>
+                
+                <h2>Contact us</h2>
+                <p>
+                    For further information or advice about your career
+                    <a href="LinkedIn" target="_blank"><strong>contact Mita Das</strong></a>.
+                </p>
+            </div>
+        </div>
+    </div>
+ 
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+     <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="./index2.js"></script>
+</body>
+</html>
