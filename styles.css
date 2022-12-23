@@ -6,7 +6,11 @@
     margin-left: -10px;
     margin-right: -10px;
 }
-
+#imageText{
+	width:100%;
+	text-align:centre;
+	
+}
 .first-page{
     display: block;
 }
